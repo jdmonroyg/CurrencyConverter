@@ -1,4 +1,4 @@
-package com.currencyconverterapp.currencyconvert;
+package com.currencyconverterapp.currencyconverter;
 
 /**
  * @author jdmon on 3/08/2023.
