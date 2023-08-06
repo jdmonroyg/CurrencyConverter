@@ -14,10 +14,14 @@ import static com.currencyconverterapp.logic.ValidationUtils.validateNotNull;
 public class CurrencyConverter {
     private Object currencies[];
     private HashMap<String, Double> exchangesRates;
+    private HashMap<String, String> symbolList;
 
     public CurrencyConverter(){
         this.currencies=new Object[]{"COP","USD","EUR","GBP","JPY","KRW"};
         this.exchangesRates = new HashMap<>();
+        this.symbolList = new HashMap<>();
+        initializeExchangeRates();
+        initializeSymbolList();
     }
     public boolean convertCurrency(double value){
         boolean iterator=true;
@@ -30,9 +34,10 @@ public class CurrencyConverter {
         }
         // logic to convert
         String conversionKey = sourceCurrency + "to" + targetCurrency;
-        initializeExchangeRates();
+
         double convertedValue = exchangesRates.get(conversionKey)*value;
-        String messageConvertedValue = String.format("The conversion to %s is: %.7f",targetCurrency,convertedValue);
+        String currencySymbol = symbolList.get(targetCurrency.toString());
+        String messageConvertedValue = String.format("The conversion to %s is: %s%.7f",targetCurrency,currencySymbol,convertedValue);
         JOptionPane.showMessageDialog(null, messageConvertedValue);
         return iterator;
     }
@@ -44,7 +49,7 @@ public class CurrencyConverter {
         exchangesRates.put("COPtoEUR",0.00022);
         exchangesRates.put("COPtoGBP",0.00019);
         exchangesRates.put("COPtoJPY",0.034);
-        exchangesRates.put("COPtoKRW",0.034);
+        exchangesRates.put("COPtoKRW",0.32);
         exchangesRates.put("USDtoCOP",4140.21);
         exchangesRates.put("USDtoUSD",1.0);
         exchangesRates.put("USDtoEUR",0.91);
@@ -52,8 +57,8 @@ public class CurrencyConverter {
         exchangesRates.put("USDtoJPY",141.75);
         exchangesRates.put("USDtoKRW",1304.04);
         exchangesRates.put("EURtoCOP",4565.20);
-        exchangesRates.put("EURtoUSD",1.0);
-        exchangesRates.put("EURtoEUR",1.10);
+        exchangesRates.put("EURtoUSD",1.10);
+        exchangesRates.put("EURtoEUR",1.0);
         exchangesRates.put("EURtoGBP",0.86);
         exchangesRates.put("EURtoJPY",156.31);
         exchangesRates.put("EURtoKRW",1437.90);
@@ -76,6 +81,18 @@ public class CurrencyConverter {
         exchangesRates.put("KRWtoJPY",0.11);
         exchangesRates.put("KRWtoKRW",1.0);
     }
+
+    private void initializeSymbolList(){
+        symbolList.put("COP", "$");
+        symbolList.put("USD", "$");
+        symbolList.put("EUR", "€");
+        symbolList.put("GBP", "£");
+        symbolList.put("JPY", "¥");
+        symbolList.put("KRW", "₩");
+
+    }
+
+
 
 
 

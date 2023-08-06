@@ -34,7 +34,7 @@ public class ConverterHandler {
                     int response = JOptionPane.showConfirmDialog(null, "Do you want to run the program again?");
 
                     if(response!=0){
-                        showEndingMessage();
+                        System.out.println("aca");
                         iterator = false;
                     }
                 }
