@@ -15,7 +15,7 @@ public class ValidationUtils {
      */
     public static boolean validateNumber(String input){
         try {
-            double value=Double.parseDouble(input);
+            Double.parseDouble(input);
             return true;
         }catch (NumberFormatException numberFormatException){
             return false;
@@ -24,8 +24,8 @@ public class ValidationUtils {
 
     /**
      * Validates that the option object is null
-     * @param obj
-     * @return
+     * @param obj for validate
+     * @return true for an object is null or false for an object not null
      */
     public static boolean validateIsNull(Object obj){
 

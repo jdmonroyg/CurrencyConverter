@@ -10,7 +10,7 @@ import static com.currencyconverterapp.logic.ValidationUtils.*;
  * The class in charge of selecting a converter in the application
  */
 public class ConverterHandler {
-    private String converterType;
+    private final String converterType;
 
     /**
      * @param converterType
