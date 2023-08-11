@@ -13,10 +13,11 @@ To start using the Converter Application, follow these simple steps:
 
 ## **Technical Stack**
 * Java 1.8
-  - [Mashape.unirest.java library] (https://javadoc.io/doc/com.mashape.unirest/unirest-java/latest/index.html)
+  - [Mashape.unirest.java library](https://javadoc.io/doc/com.mashape.unirest/unirest-java/latest/index.html)
 * Java Swing
-* [ExchangeRate-Api] (https://www.exchangerate-api.com/)
+* [ExchangeRate-Api](https://www.exchangerate-api.com/)
 * Git
+* Code Documentation JavaDocs
 
 ## **Functionalities**
 1. Currency Converter: Seamlessly convert between different currencies using up-to-date exchange rates sourced from external APIs.
@@ -26,5 +27,5 @@ To start using the Converter Application, follow these simple steps:
 
 
 ## **Contact me**
-[Jesus Monroy] (https://www.linkedin.com/in/jesusmonroygarces/)
+[Jesus Monroy](https://www.linkedin.com/in/jesusmonroygarces/)
 
