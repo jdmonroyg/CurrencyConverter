@@ -1,7 +1,6 @@
 package com.currencyconverterapp.logic;
 
 import javax.swing.*;
-import java.util.HashMap;
 
 import static com.currencyconverterapp.logic.ValidationUtils.validateIsNull;
 
@@ -16,9 +15,7 @@ public class TemperatureConverter extends Converter{
 
     }
     public boolean convert(double value){
-        boolean iterator=true;
         Object sourceCurrency = (JOptionPane.showInputDialog(null, "Select source currency", "TemperatureConverter", JOptionPane.QUESTION_MESSAGE, null, super.units, "Select"));
-
         Object targetCurrency = (JOptionPane.showInputDialog(null, "Select target currency", "TemperatureConverter", JOptionPane.QUESTION_MESSAGE, null, super.units, "Select"));
 
         if (validateIsNull(sourceCurrency) || validateIsNull(targetCurrency)){
@@ -30,7 +27,7 @@ public class TemperatureConverter extends Converter{
         String temperatureSymbol = symbolList.get(targetCurrency.toString());
         String messageConvertedValue = String.format("The conversion to %s is: %.3f%s",targetCurrency,convertedValue,temperatureSymbol);
         JOptionPane.showMessageDialog(null, messageConvertedValue);
-        return iterator;
+        return true;
     }
 
     private void initializeConversions(double value){
@@ -45,8 +42,6 @@ public class TemperatureConverter extends Converter{
         super.conversionRates.put("KELVINtoKELVIN",1.0);
 
     }
-
-
 
     protected void initializeSymbolList(){
         symbolList.put("CELSIUS","°C");

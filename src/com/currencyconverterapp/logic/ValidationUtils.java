@@ -28,10 +28,15 @@ public class ValidationUtils {
      * @return
      */
     public static boolean validateIsNull(Object obj){
-        if (obj==null ){
-            return true;
-        }
-        return false;
+
+        return obj==null;
+    }
+    public static boolean validateIsNullOrEmpty(String apiKey){
+        return apiKey==null || apiKey.isEmpty();
+    }
+
+    public static boolean validateNegative(double value){
+        return value<0;
     }
 
     public static void showEndingMessage(){
